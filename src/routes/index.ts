@@ -1,9 +1,9 @@
 import express from 'express';
 
-import { loginrouteapi } from './Login.route';
-import { TokenVarifier } from '../middleware/UserAuth';
+import { loginrouteapi } from './login.route';
+import { TokenVarifier } from '../middleware/userauth';
 import { AdminRoutesApi } from './Admin.route';
-import { UserRoutesApi } from './user.route';
+import { UserRoutesApi } from './User.route';
 import { GroupRoutesApi } from './Group.route';
 
 

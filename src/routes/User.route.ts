@@ -1,10 +1,8 @@
 import express from 'express';
 import { UserController } from '../controller/User.controller';
-import { IUSER } from '../types/document/IUSER';
 import { IUserManageResponse,IRegisterUserResponse,IDeleteUserResponse} from '../types/Response/User.Response';
 import { IRegisterUserRequest,IUserManageRequest,IDeleteUserRequest } from '../types/Request/User.Request';
-import CustomeError from '../utills/error';
-import { TokenVarifier } from '../middleware/UserAuth';
+
 
 export class UserRoutes {
   router: express.Router;

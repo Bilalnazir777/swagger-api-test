@@ -1,9 +1,6 @@
 import express from 'express';
-import {LoginController} from '../controller/Login.Controller';
-import { IUSER } from '../types/document/IUSER';
-import CustomeError from '../utills/error';
-import {LoginRequest} from '../types/request/Login.Request';
-import { LoginResponse } from '../types/response/Login.Response';
+import {LoginController} from '../controller/Login.controller';
+
 
 export class Loginroutes{
     router:express.Router
