@@ -1,5 +1,5 @@
 import { ADMINSchema } from '../model/Admin.model';
-import { IADMIN } from '../types/document/IAdmin';
+import { IADMIN } from '../types/document/IADMIN';
 
 
 export class MainAdmin {

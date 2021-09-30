@@ -3,16 +3,16 @@ import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import {MainApi} from "./routes";
+import { MainApi } from "./routes";
 import { DbMongo } from "./config/mongodb.conn";
 import { Server } from "http";
 const health = require('@cloudnative/health-connect');
 let healthcheck = new health.HealthChecker();
-import { MongoCluster,MongoDbName,Mongo_Pass,Mongo_user_name } from "./utills/constant";
+import { MongoCluster, MongoDbName, Mongo_Pass, Mongo_user_name } from "./utills/constant";
 let server: Server | null = null;
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 function initApplication(): express.Application {
-    new DbMongo().connect(MongoCluster,MongoDbName,Mongo_user_name,Mongo_Pass);
+    new DbMongo().connect(MongoCluster, MongoDbName, Mongo_user_name, Mongo_Pass);
     const app = express();
     app.use(express.json());
     app.use(morgan("tiny"));
@@ -48,7 +48,7 @@ function start() {
     const app = initApplication();
 
     server = app.listen(process.env.PORT || PORT, () => {
-        console.log(`Server started on PORT:`+ PORT);
+        console.log(`Server started on PORT:` + PORT);
     });
 }
 // Start the application

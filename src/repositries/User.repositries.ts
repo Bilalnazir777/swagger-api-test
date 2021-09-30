@@ -1,10 +1,8 @@
-import { ADMINSchema } from '../model/Admin.model';
-import { IADMIN } from '../types/document/IAdmin';
+
+
 import { USERSchema } from '../model/User.model';
-import { GROUPSchema } from '../model/Group.model';
-import { MESSAGESchema } from '../model/Message.model'
 import { IUSER } from '../types/document/IUSER';
-import { IGROUP } from '../types/document/IGROUP';
+
 
 export class MainUser {
     constructor() { }

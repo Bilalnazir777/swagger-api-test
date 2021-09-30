@@ -1,11 +1,11 @@
-import { IUSER } from '../types/document/IUSER';
+
 import { MainUser } from '../repositries/User.repositries';
 import CustomeError from '../utills/error';
 import { Get, Route, Tags, Post, Body, Path, Put, Delete, SuccessResponse, Security } from "tsoa";
-import { LoginResponse } from '../types/response/Login.Response';
-import { LoginRequest } from '../types/request/Login.Request'
+import { LoginResponse } from '../types/Response/Login.Response';
+import { LoginRequest } from '../types/Request/Login.Request'
 import jwt, { Secret } from "jsonwebtoken";
-import { json } from 'stream/consumers';
+
 require('dotenv').config();
 
 
