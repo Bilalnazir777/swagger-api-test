@@ -1,0 +1,914 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"LoginResponse": {
+				"properties": {
+					"TOKEN_KEY": {
+						"type": "string"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"TOKEN_KEY",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LoginRequest": {
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"username",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ISaveAdminResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"firstname": {
+						"type": "string"
+					},
+					"lastname": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"firstname",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ISaveRequestAdmin": {
+				"properties": {
+					"firstname": {
+						"type": "string"
+					},
+					"lastname": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"firstname",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRegisterUserResponse": {
+				"properties": {
+					"user_name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"pictureUrl": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"user_name",
+					"email",
+					"password",
+					"pictureUrl"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRegisterUserRequest": {
+				"properties": {
+					"user_name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"pictureUrl": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"user_name",
+					"email",
+					"password",
+					"pictureUrl"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"_LeanDocument__LeanDocument_T__": {
+				"properties": {},
+				"type": "object"
+			},
+			"Pick__LeanDocument_T_.Exclude_keyof_LeanDocument_T_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested__": {
+				"properties": {
+					"_id": {
+						"$ref": "#/components/schemas/_LeanDocument__LeanDocument_T__",
+						"description": "This documents _id."
+					},
+					"__v": {
+						"description": "This documents __v."
+					},
+					"id": {
+						"description": "The string version of this documents _id."
+					}
+				},
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"Omit__LeanDocument_this_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested_": {
+				"$ref": "#/components/schemas/Pick__LeanDocument_T_.Exclude_keyof_LeanDocument_T_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested__",
+				"description": "Construct a type with the properties of T except for those in type K."
+			},
+			"LeanDocument_this_": {
+				"$ref": "#/components/schemas/Omit__LeanDocument_this_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested_"
+			},
+			"IUSER": {
+				"$ref": "#/components/schemas/LeanDocument_this_"
+			},
+			"IDeleteUserRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserGroups": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserManageResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"user_name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"pictureUrl": {
+						"type": "string"
+					},
+					"groups": {
+						"items": {
+							"$ref": "#/components/schemas/IUserGroups"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"_id",
+					"user_name",
+					"email",
+					"password",
+					"pictureUrl",
+					"groups"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserManageRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"user_name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"pictureUrl": {
+						"type": "string"
+					},
+					"groups": {
+						"items": {
+							"$ref": "#/components/schemas/IUserGroups"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"_id",
+					"user_name",
+					"email",
+					"password",
+					"pictureUrl",
+					"groups"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ISendMessageResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"group": {
+						"type": "string"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"group",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ISendMessageRequest": {
+				"properties": {
+					"userid": {
+						"type": "string"
+					},
+					"groupid": {
+						"type": "string"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"userid",
+					"groupid",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IGroupMembers": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUpdateGroupMessagesResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"members": {
+						"items": {
+							"$ref": "#/components/schemas/IGroupMembers"
+						},
+						"type": "array"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"members",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IGetGroupRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ICreateGroupResponse": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"members": {
+						"items": {
+							"$ref": "#/components/schemas/IGroupMembers"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"_id",
+					"name",
+					"members"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ICreateGroupRequest": {
+				"properties": {
+					"group": {
+						"type": "string"
+					},
+					"members": {
+						"items": {
+							"$ref": "#/components/schemas/IGroupMembers"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"group",
+					"members"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IGROUP": {
+				"$ref": "#/components/schemas/LeanDocument_this_"
+			},
+			"IDeleteGroupRequest": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IAddUserToGroupResponse": {
+				"properties": {
+					"members": {
+						"items": {
+							"$ref": "#/components/schemas/IGroupMembers"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"members"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IAddUserToGroupRequest": {
+				"properties": {
+					"userid": {
+						"type": "string"
+					},
+					"groupid": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"userid",
+					"groupid"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IcheckmesagesRes": {
+				"properties": {
+					"groupid": {
+						"type": "string"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"groupid",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IcheckmesagesReq": {
+				"properties": {
+					"groupid": {
+						"type": "string"
+					},
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"groupid",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"api_key": {
+				"type": "apiKey",
+				"name": "token",
+				"in": "header"
+			}
+		}
+	},
+	"info": {
+		"title": "final_test_api",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/LoginResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"login"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LoginRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/Admin/saveAdmin": {
+			"post": {
+				"operationId": "SaveAdmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ISaveAdminResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Admin"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ISaveRequestAdmin"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/registeruser": {
+			"post": {
+				"operationId": "RegisterUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IRegisterUserResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"user"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IRegisterUserRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/deleteuser": {
+			"delete": {
+				"operationId": "DeleteUser",
+				"responses": {
+					"200": {
+						"description": "user deleted",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/IUSER"
+										},
+										{
+											"properties": {
+												"_id": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"_id"
+											],
+											"type": "object"
+										}
+									]
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"user"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IDeleteUserRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/manageuser": {
+			"put": {
+				"operationId": "ManageUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IUserManageResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"user"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IUserManageRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/sendMessage": {
+			"post": {
+				"operationId": "SendMessage",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ISendMessageResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"messages",
+					"user"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ISendMessageRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/group/getgroup": {
+			"post": {
+				"operationId": "Getgroup",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IUpdateGroupMessagesResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"group"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IGetGroupRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/group/creategroup": {
+			"post": {
+				"operationId": "Creategroup",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ICreateGroupResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"group"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ICreateGroupRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/group/deletegroup": {
+			"delete": {
+				"operationId": "DeleteGroup",
+				"responses": {
+					"200": {
+						"description": "group deleted",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/IGROUP"
+										},
+										{
+											"properties": {
+												"_id": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"_id"
+											],
+											"type": "object"
+										}
+									]
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"group"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IDeleteGroupRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/group/addusertogroup": {
+			"post": {
+				"operationId": "AddUserToGroup",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IAddUserToGroupResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"group"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IAddUserToGroupRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/group/checkingmesage": {
+			"post": {
+				"operationId": "Checkingmessage",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/IcheckmesagesRes"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"group"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/IcheckmesagesReq"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
