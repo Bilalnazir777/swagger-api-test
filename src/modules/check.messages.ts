@@ -2,7 +2,7 @@ export const checker = function (message: string, messages: any) {
     messages.map((data: any) => {
         let filtered: any = [];
         for (let i = 0; i < data.message.length; i++) {
-            if (data.message[i].message.search(new RegExp(message)) != -1) {
+            if (data.message[i].message.toLowerCase().search(new RegExp(message.toLowerCase())) != -1) {
                 filtered.push(data.message[i])
                 //console.log(filtered, new RegExp(message))
             }
