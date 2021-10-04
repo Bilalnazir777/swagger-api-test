@@ -57,19 +57,7 @@ export class GroupRoutes {
                     next(error);
                   }
           });
-          //checking messages in group
-          this.router.post('/checkingmesage',async (req,res,next)=>{
-            try{
-              const message:IcheckmesagesReq = req.body
-              const check:IcheckmesagesRes = await new GroupController().checkingmessage(message)
-              res.send({
-                  message:check
-              })
-
-            }catch(error){
-              next(error)
-            }
-          })
+         
           
     }
 }

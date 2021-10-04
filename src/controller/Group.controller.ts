@@ -36,18 +36,4 @@ export class GroupController{
     const new_user:IGROUP = await new MainGroup().addusertogroup(<any>(user))
     return <IAddUserToGroupResponse>new_user
     }
-    @Post('/checkingmesage')
-    async checkingmessage(@Body() group:IcheckmesagesReq):Promise<IcheckmesagesRes>{
-      const message:any = await new MainGroup().checkingmessage(group)
-      let salary:any = message.message
-      let msj:string[] = []
-      for(let n in salary){
-         if(salary[n].msj===message.message){
-           msj.push(salary[n])
-         }
-      }
-      return <any>(msj)
-    }
-
-
 }

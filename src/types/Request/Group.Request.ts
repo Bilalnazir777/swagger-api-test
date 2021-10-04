@@ -21,6 +21,6 @@ export interface IUpdateGroupMessagesRequest {
 	messageid: string;
 }
 export interface IcheckmesagesReq{
-    groupid:string
+  
     message:string
 }

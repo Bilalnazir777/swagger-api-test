@@ -67,19 +67,6 @@ class GroupRoutes {
                 next(error);
             }
         }));
-        //checking messages in group
-        this.router.post('/checkingmesage', (req, res, next) => __awaiter(this, void 0, void 0, function* () {
-            try {
-                const message = req.body;
-                const check = yield new Group_controller_1.GroupController().checkingmessage(message);
-                res.send({
-                    message: check
-                });
-            }
-            catch (error) {
-                next(error);
-            }
-        }));
     }
 }
 exports.GroupRoutes = GroupRoutes;

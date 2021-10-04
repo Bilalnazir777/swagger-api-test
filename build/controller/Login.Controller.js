@@ -45,7 +45,7 @@ let LoginController = class LoginController {
     }
 };
 __decorate([
-    (0, tsoa_1.Post)("/login"),
+    (0, tsoa_1.Post)("/userlogin"),
     __param(0, (0, tsoa_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
@@ -53,7 +53,7 @@ __decorate([
 ], LoginController.prototype, "login", null);
 LoginController = __decorate([
     (0, tsoa_1.Route)('/'),
-    (0, tsoa_1.Tags)('login'),
+    (0, tsoa_1.Tags)('userlogin'),
     __metadata("design:paramtypes", [])
 ], LoginController);
 exports.LoginController = LoginController;

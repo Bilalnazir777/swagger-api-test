@@ -26,8 +26,5 @@ class MainGroup {
             new: true,
         }).populate('message');
     }
-    checkingmessage(group) {
-        return Group_model_1.GROUPSchema.findById(group.groupid);
-    }
 }
 exports.MainGroup = MainGroup;

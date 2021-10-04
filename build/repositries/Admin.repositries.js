@@ -4,7 +4,7 @@ exports.MainAdmin = void 0;
 const Admin_model_1 = require("../model/Admin.model");
 class MainAdmin {
     constructor() { }
-    //saving admin 
+    //authentucating admin 
     saveadmin(admin) {
         return new Admin_model_1.ADMINSchema(admin).save();
     }

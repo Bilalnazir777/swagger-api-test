@@ -19,4 +19,7 @@ export class MainMessage {
 			}
 		);
 	}
+	checkingmessages(){
+		return MESSAGESchema.find()
+	}
 }

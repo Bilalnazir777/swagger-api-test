@@ -39,8 +39,6 @@ export class MainGroup {
       }
     ).populate('message');
   }
-  checkingmessage(group: IcheckmesagesReq) {
-    return GROUPSchema.findById(group.groupid)
-  }
+  
 }
 

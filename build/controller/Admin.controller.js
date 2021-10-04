@@ -34,7 +34,7 @@ let AdminController = class AdminController {
     }
 };
 __decorate([
-    (0, tsoa_1.Post)('/saveAdmin'),
+    (0, tsoa_1.Post)('/authAdmin'),
     __param(0, (0, tsoa_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
@@ -42,7 +42,7 @@ __decorate([
 ], AdminController.prototype, "SaveAdmin", null);
 AdminController = __decorate([
     (0, tsoa_1.Route)('Admin'),
-    (0, tsoa_1.Tags)('Admin'),
+    (0, tsoa_1.Tags)('AuthAdmin'),
     (0, tsoa_1.Security)('api_key'),
     __metadata("design:paramtypes", [])
 ], AdminController);

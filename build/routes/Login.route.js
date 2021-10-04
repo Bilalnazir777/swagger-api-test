@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.loginrouteapi = exports.Loginroutes = void 0;
 const express_1 = __importDefault(require("express"));
-const Login_Controller_1 = require("../controller/Login.Controller");
+const Login_controller_1 = require("../controller/Login.controller");
 class Loginroutes {
     constructor() {
         this.router = express_1.default.Router();
@@ -22,9 +22,9 @@ class Loginroutes {
     }
     routes() {
         //login routes
-        this.router.post('/login', (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+        this.router.post('/userlogin', (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             try {
-                var response = yield new Login_Controller_1.LoginController().login(req.body);
+                var response = yield new Login_controller_1.LoginController().login(req.body);
                 res.json({
                     token_key: response.TOKEN_KEY,
                     message: response.message

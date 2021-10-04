@@ -38,48 +38,6 @@
 				"type": "object",
 				"additionalProperties": false
 			},
-			"ISaveAdminResponse": {
-				"properties": {
-					"_id": {
-						"type": "string"
-					},
-					"firstname": {
-						"type": "string"
-					},
-					"lastname": {
-						"type": "string"
-					},
-					"password": {
-						"type": "string"
-					}
-				},
-				"required": [
-					"_id",
-					"firstname",
-					"password"
-				],
-				"type": "object",
-				"additionalProperties": false
-			},
-			"ISaveRequestAdmin": {
-				"properties": {
-					"firstname": {
-						"type": "string"
-					},
-					"lastname": {
-						"type": "string"
-					},
-					"password": {
-						"type": "string"
-					}
-				},
-				"required": [
-					"firstname",
-					"password"
-				],
-				"type": "object",
-				"additionalProperties": false
-			},
 			"IRegisterUserResponse": {
 				"properties": {
 					"user_name": {
@@ -431,33 +389,13 @@
 				"type": "object",
 				"additionalProperties": false
 			},
-			"IcheckmesagesRes": {
-				"properties": {
-					"groupid": {
-						"type": "string"
-					},
-					"message": {
-						"type": "string"
-					}
-				},
-				"required": [
-					"groupid",
-					"message"
-				],
-				"type": "object",
-				"additionalProperties": false
-			},
 			"IcheckmesagesReq": {
 				"properties": {
-					"groupid": {
-						"type": "string"
-					},
 					"message": {
 						"type": "string"
 					}
 				},
 				"required": [
-					"groupid",
 					"message"
 				],
 				"type": "object",
@@ -482,7 +420,7 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
-		"/login": {
+		"/userlogin": {
 			"post": {
 				"operationId": "Login",
 				"responses": {
@@ -498,7 +436,7 @@
 					}
 				},
 				"tags": [
-					"login"
+					"userlogin"
 				],
 				"security": [],
 				"parameters": [],
@@ -508,42 +446,6 @@
 						"application/json": {
 							"schema": {
 								"$ref": "#/components/schemas/LoginRequest"
-							}
-						}
-					}
-				}
-			}
-		},
-		"/Admin/saveAdmin": {
-			"post": {
-				"operationId": "SaveAdmin",
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/ISaveAdminResponse"
-								}
-							}
-						}
-					}
-				},
-				"tags": [
-					"Admin"
-				],
-				"security": [
-					{
-						"api_key": []
-					}
-				],
-				"parameters": [],
-				"requestBody": {
-					"required": true,
-					"content": {
-						"application/json": {
-							"schema": {
-								"$ref": "#/components/schemas/ISaveRequestAdmin"
 							}
 						}
 					}
@@ -869,23 +771,21 @@
 				}
 			}
 		},
-		"/group/checkingmesage": {
+		"/message/checkmessages": {
 			"post": {
-				"operationId": "Checkingmessage",
+				"operationId": "Checkmessage",
 				"responses": {
 					"200": {
 						"description": "Ok",
 						"content": {
 							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/IcheckmesagesRes"
-								}
+								"schema": {}
 							}
 						}
 					}
 				},
 				"tags": [
-					"group"
+					"messages"
 				],
 				"security": [
 					{

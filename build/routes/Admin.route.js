@@ -22,7 +22,7 @@ class AdminRoutes {
     }
     //get admin
     routes() {
-        this.router.post('/saveAdmin', (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+        this.router.post('/authAdmin', (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const getreq = req.body;
                 const admin = yield new Admin_controller_1.AdminController().SaveAdmin(getreq);

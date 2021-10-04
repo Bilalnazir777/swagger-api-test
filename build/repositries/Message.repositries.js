@@ -14,5 +14,8 @@ class MainMessage {
             upsert: true,
         });
     }
+    checkingmessages() {
+        return Message_model_1.MESSAGESchema.find();
+    }
 }
 exports.MainMessage = MainMessage;

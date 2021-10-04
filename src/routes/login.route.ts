@@ -10,7 +10,7 @@ export class Loginroutes{
     }
     routes(){
         //login routes
-        this.router.post('/login' , async(req,res,next)=>{
+        this.router.post('/userlogin' , async(req,res,next)=>{
 
         try{
            var response = await new LoginController().login(req.body)

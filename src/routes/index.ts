@@ -2,9 +2,9 @@ import express from 'express';
 
 import { loginrouteapi } from './login.route';
 import { TokenVarifier } from '../middleware/userauth';
-import { AdminRoutesApi } from './Admin.route';
 import { UserRoutesApi } from './User.route';
 import { GroupRoutesApi } from './Group.route';
+import { MessageRoutesApi } from './message.route';
 
 
 export class MainRouter {
@@ -15,9 +15,10 @@ export class MainRouter {
     }
     routes() {
        
-        this.router.use('/admin',TokenVarifier,AdminRoutesApi)
+       
         this.router.use('/user',TokenVarifier,UserRoutesApi)
         this.router.use('/group',TokenVarifier,GroupRoutesApi)
+        this.router.use('/message',TokenVarifier,MessageRoutesApi)
         this.router.use('/', loginrouteapi)
     }
 }

@@ -10,12 +10,12 @@ require('dotenv').config();
 
 
 @Route('/')
-@Tags('login')
+@Tags('userlogin')
 
 export class LoginController {
     constructor() { }
 
-    @Post("/login")
+    @Post("/userlogin")
     async login(@Body() user: LoginRequest): Promise<LoginResponse> {
         const authuser = await new MainUser().ReturnUser(user)
         if (!authuser)

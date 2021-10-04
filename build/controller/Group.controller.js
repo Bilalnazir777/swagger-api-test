@@ -55,19 +55,6 @@ let GroupController = class GroupController {
             return new_user;
         });
     }
-    checkingmessage(group) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const message = yield new Group_repositries_1.MainGroup().checkingmessage(group);
-            let salary = message.message;
-            let msj = [];
-            for (let n in salary) {
-                if (salary[n].msj === message.message) {
-                    msj.push(salary[n]);
-                }
-            }
-            return (msj);
-        });
-    }
 };
 __decorate([
     (0, tsoa_1.Post)("/getgroup"),
@@ -98,13 +85,6 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], GroupController.prototype, "AddUserToGroup", null);
-__decorate([
-    (0, tsoa_1.Post)('/checkingmesage'),
-    __param(0, (0, tsoa_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], GroupController.prototype, "checkingmessage", null);
 GroupController = __decorate([
     (0, tsoa_1.Route)('group'),
     (0, tsoa_1.Tags)('group'),
