@@ -22,5 +22,5 @@ export interface IUpdateGroupMessagesRequest {
 }
 export interface IcheckmesagesReq{
   
-    message:string
+    messagebody:string
 }

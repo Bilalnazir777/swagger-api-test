@@ -7,7 +7,7 @@ class MainMessage {
     sendmessage(message) {
         return Message_model_1.MESSAGESchema.findOneAndUpdate({ group: message.groupid }, {
             '$push': {
-                'message': { message: message.message, userid: message.userid },
+                'messagearray': { messagebody: message.messagebody, userid: message.userid },
             },
         }, {
             new: true,
@@ -15,6 +15,9 @@ class MainMessage {
         });
     }
     checkingmessages() {
+        return Message_model_1.MESSAGESchema.find();
+    }
+    userallmessages() {
         return Message_model_1.MESSAGESchema.find();
     }
 }

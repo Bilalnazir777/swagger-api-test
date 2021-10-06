@@ -4,9 +4,9 @@ import { IMESSAGE } from '../types/document/IMESSAGE';
 const IMESSAGESchema = new Schema(
     {
         group: { type:Schema.Types.ObjectId , ref:'IGROUPSchema' },
-        message:[{
+        messagearray:[{
             userid:{type:Schema.Types.ObjectId , ref:'IUSERSchema'},
-            message:String
+            messagebody:String
     }]
 
     },

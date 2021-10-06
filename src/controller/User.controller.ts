@@ -35,13 +35,12 @@ export class UserController {
     return <IUserManageResponse>update_user;
   }
   @Post('/sendMessage')
-  @Tags('messages')
   async sendMessage(@Body() message: ISendMessageRequest
   ): Promise<ISendMessageResponse> {
     const messages: ISendMessageResponse = <any>(
       await new MainMessage().sendmessage(message)
     );
-    console.log(messages, message)
+   
     return <ISendMessageResponse>messages
   }
 }

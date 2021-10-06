@@ -19,5 +19,5 @@ export interface IDeleteUserRequest{
 }
 export interface IUserSendMessageRequest {
 	Group: string;
-	Message: string;
+	messagebody: string;
 }

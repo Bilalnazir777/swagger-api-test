@@ -10,7 +10,7 @@ export class MainMessage {
 			{ group: message.groupid },
 			{
 				'$push': {
-					'message': { message: message.message, userid: message.userid },
+					'messagearray': { messagebody: message.messagebody, userid: message.userid },
 				},
 			},
 			{
@@ -19,7 +19,11 @@ export class MainMessage {
 			}
 		);
 	}
+
 	checkingmessages(){
+		return MESSAGESchema.find()
+	}
+	userallmessages(){
 		return MESSAGESchema.find()
 	}
 }

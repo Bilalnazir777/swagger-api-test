@@ -53,7 +53,6 @@ let UserController = class UserController {
     sendMessage(message) {
         return __awaiter(this, void 0, void 0, function* () {
             const messages = (yield new Message_repositries_1.MainMessage().sendmessage(message));
-            console.log(messages, message);
             return messages;
         });
     }
@@ -82,7 +81,6 @@ __decorate([
 ], UserController.prototype, "ManageUser", null);
 __decorate([
     (0, tsoa_1.Post)('/sendMessage'),
-    (0, tsoa_1.Tags)('messages'),
     __param(0, (0, tsoa_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),

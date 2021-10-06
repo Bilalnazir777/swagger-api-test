@@ -1,15 +1,15 @@
-export const checker = function (message: string, messages: any) {
-    messages.map((data: any) => {
+export const checker = function (messagebody: string, messagearray: any) {
+    messagearray.map((data: any) => {
         let filtered: any = [];
-        for (let i = 0; i < data.message.length; i++) {
-            if (data.message[i].message.toLowerCase().search(message.toLowerCase()) != -1) {
+        for (let i = 0; i < data.messagearray.length; i++) {
+            if (data.message[i].messagebody.toLowerCase().search(messagebody.toLowerCase()) != -1) {
                 filtered.push(data.message[i])
                 //console.log(filtered, new RegExp(message))
             }
         }
-        data.message = filtered;
+        data.messagearray = filtered;
     })
-    return messages.filter((elem: any) => {
-        return elem.message.length != 0
+    return messagearray.filter((elem: any) => {
+        return elem.messagearray.length != 0
     })
 }

@@ -33,7 +33,7 @@ export class MainGroup {
   updategroupmessages(group: any) {
     return GROUPSchema.findByIdAndUpdate(
       group.groupid,
-      { message: group.messageid },
+      { messagearray: group.messageid },
       {
         new: true,
       }

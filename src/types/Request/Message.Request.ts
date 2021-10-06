@@ -1,5 +1,9 @@
 export interface ISendMessageRequest {
 	userid: string;
 	groupid: string;
-	message: string;
+	messagebody: string;
+}
+export interface Iuserallmessagesreq{
+	userid:string
+	messagebody:string
 }

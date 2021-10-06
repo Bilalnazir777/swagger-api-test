@@ -12,9 +12,9 @@ export interface IUpdateGroupMessagesResponse {
 	_id: string;
 	name: string;
 	members: IGroupMembers[];
-	message: string;
+	messagebody: string;
 }
 export interface IcheckmesagesRes{
     groupid:string
-    message:string
+    messagebody:string
 }

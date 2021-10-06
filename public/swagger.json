@@ -218,14 +218,14 @@
 					"group": {
 						"type": "string"
 					},
-					"message": {
+					"messagebody": {
 						"type": "string"
 					}
 				},
 				"required": [
 					"_id",
 					"group",
-					"message"
+					"messagebody"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -238,14 +238,14 @@
 					"groupid": {
 						"type": "string"
 					},
-					"message": {
+					"messagebody": {
 						"type": "string"
 					}
 				},
 				"required": [
 					"userid",
 					"groupid",
-					"message"
+					"messagebody"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -276,7 +276,7 @@
 						},
 						"type": "array"
 					},
-					"message": {
+					"messagebody": {
 						"type": "string"
 					}
 				},
@@ -284,7 +284,7 @@
 					"_id",
 					"name",
 					"members",
-					"message"
+					"messagebody"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -391,12 +391,28 @@
 			},
 			"IcheckmesagesReq": {
 				"properties": {
-					"message": {
+					"messagebody": {
 						"type": "string"
 					}
 				},
 				"required": [
-					"message"
+					"messagebody"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Iuserallmessagesreq": {
+				"properties": {
+					"userid": {
+						"type": "string"
+					},
+					"messagebody": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"userid",
+					"messagebody"
 				],
 				"type": "object",
 				"additionalProperties": false
@@ -591,7 +607,6 @@
 					}
 				},
 				"tags": [
-					"messages",
 					"user"
 				],
 				"security": [
@@ -799,6 +814,40 @@
 						"application/json": {
 							"schema": {
 								"$ref": "#/components/schemas/IcheckmesagesReq"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/message/userallmessages": {
+			"post": {
+				"operationId": "Userallmessages",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"messages"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Iuserallmessagesreq"
 							}
 						}
 					}

@@ -22,7 +22,7 @@ class MainGroup {
         });
     }
     updategroupmessages(group) {
-        return Group_model_1.GROUPSchema.findByIdAndUpdate(group.groupid, { message: group.messageid }, {
+        return Group_model_1.GROUPSchema.findByIdAndUpdate(group.groupid, { messagearray: group.messageid }, {
             new: true,
         }).populate('message');
     }

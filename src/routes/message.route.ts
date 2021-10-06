@@ -19,7 +19,18 @@ export class MessageRoutes {
               next(err)
           }
     })
+      
 
+    this.router.post('/userallmessages', async (req, res, next) => {
+      try {
+            const message =req.body
+            const usermessage = await new MessageController().userallmessages(message);
+            res.send(usermessage)
+      }catch(err){
+          next(err)
+      }
+})
     }
+
 }
 export const MessageRoutesApi = new MessageRoutes().router;
